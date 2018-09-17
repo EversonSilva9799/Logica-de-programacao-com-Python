@@ -1,0 +1,28 @@
+A = []
+lin = 2
+col = 2
+
+for i in range (lin):
+    E =[]
+    for j in range (col):
+      E.append(0)
+    A.append(E)
+
+print('Informe onde gostaria de se sentar!')
+
+ocupacao = 0
+while True:
+    if ocupacao < lin * col:
+      linha = int(input('Fila: '))
+      coluna = int(input('Poltrona: '))
+      if A[linha][coluna] == 1: 
+        print('Lugar já reservado!')
+        continue
+      else:
+        A[linha][coluna] = 1
+        print("Checkin realizado com sucesso.")
+        ocupacao += 1
+    else:
+      print("Overbooking.")
+      break
+    #resp = input()
